@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from rest_framework.authtoken.views import obtain_auth_token
 from django.conf import settings
 from django.conf.urls.static import static
 from core.api.viewsets import PontoTuristicoViewSet
@@ -25,6 +24,7 @@ from atracoes.api.viewsets import AtracaoViewSet
 from enderecos.api.viewsets import EnderecoViewSet
 from comentarios.api.viewsets import ComentarioViewSet
 from avaliacoes.api.viewsets import AvaliacaoViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 router = routers.DefaultRouter()

@@ -5,6 +5,7 @@ from .serializers import PontoTuristicoSerializer
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 
 class PontoTuristicoViewSet(ModelViewSet):
@@ -13,6 +14,7 @@ class PontoTuristicoViewSet(ModelViewSet):
     search_fields = ('nome', 'descricao', '=endereco__linha1')
     lookup_field = ('nome')
     permission_classes = (IsAuthenticated, )
+    authentication_classes = (TokenAuthentication, )
 
     def get_queryset(self):
         id = self.request.query_params.get('id', None)
